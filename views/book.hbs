@@ -1,0 +1,103 @@
+<!--div to hold the images for the burger-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <label class="form-label" for="form1">ISBN</label>
+            <input type="search" id="isbn" />
+            <button type="button" class="btn btn-primary" id="bookIsbn">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <div class="col-lg-3">
+            <label class="form-label" for="form1">Book</label>
+            <input type="search" id="book" />
+            <button type="button" class="btn btn-primary" id="bookName">
+                <i class="fa fa-search"></i>
+            </button>
+
+        </div>
+        <div class="col-lg-4">
+            <label class="form-label" for="form1">Author</label>
+            <input type="search" id="author" />
+            <button type="button" class="btn btn-primary" id="bookAuthor">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-primary" data-target="#MySecondmodal" data-toggle="modal">Add
+                book</button>
+            <div class="modal fade" id="MySecondmodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h4 class="modal-title">Notification</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                      Book Image:<input type="text" placeholder="imageurl"><br>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        
+                                 book:     <input type="text" placeholder="book name"><br>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                         Author:   <input type="text" placeholder="author name"> <br>  
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                 Description:<input type="text" placeholder="description"> <br> 
+                                    </div>
+                                </div>
+                                    <a href="#" class="btn btn-primary">Add Book</a>
+</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ISBN</th>
+                        <th scope="col">Book</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Book Cover</th>
+                    </tr>
+                </thead>
+                <tbody id="getBook">
+                    <ul>
+
+                        {{#each book}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{isbn}}</td>
+                            <td>{{book_name}}</td>
+                            <td>{{description}}</td>
+                            <td>{{author_name}}</td>
+                            <td><img src="{{image}}" style='width: 40px;border: 1px solid black;'></img></td>
+                        </tr>
+                        {{/each}}
+                    </ul>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
