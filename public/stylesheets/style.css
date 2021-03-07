@@ -8,7 +8,7 @@ form.login {
   border-width: 5px;
   border-color: black;
   /* border-image: url(./Assets/pictures/bookshelf.jpg); */
-  background-image: url("/book.jpg"); 
+  background-image: url(""); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
