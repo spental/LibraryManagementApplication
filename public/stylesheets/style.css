@@ -8,13 +8,13 @@ form.login {
   border-width: 5px;
   border-color: black;
   /* border-image: url(./Assets/pictures/bookshelf.jpg); */
-  background-image: url(../bookshelf.jpg) no-repeat center center fixed; 
+  background-image: url("/book.jpg"); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   /* margin-bottom: 0%; */
-  background-image: url("/book.jpg");
+  /* background-image: url("/book.jpg"); */
 
   
 
