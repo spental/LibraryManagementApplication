@@ -8,12 +8,15 @@ form.login {
   border-width: 5px;
   border-color: black;
   /* border-image: url(./Assets/pictures/bookshelf.jpg); */
-  background: url(./Assets/pictures/bookshelf.jpg) no-repeat center center fixed; 
+  background-image: url(../bookshelf.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   /* margin-bottom: 0%; */
+  background-image: url("/bookshelf.jpg");
+
+  
 
 }
 .container {
