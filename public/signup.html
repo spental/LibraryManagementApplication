@@ -2,20 +2,50 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>LMA Sign Up Form</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
-
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
+  <main class="outline" id="mainoutline">
+    <div class="containerMargin" id="containerMargin" style="background-image: url('../Assets/pictures/bookshelf.jpg');">
+      <div class="everything">
+        <div class="container" >
+         <h1>Library Management Application</h1>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+             <h2>Sign Up Form</h2>
+             <form class="login">
+               <div class="form-group">
+                 <label for="exampleInputEmail1">Email address</label>
+                 <input type="email" class="form-control" id="email-input" placeholder="Email">
+               </div>
+               <div class="form-group">
+                 <label style="text-align: center;" for="exampleInputPassword1">Password</label>
+                 <input type="password" class="form-control" id="password-input" placeholder="Password">
+               </div>
+               <button type="submit" class="btn btn-default">Sign Up</button>
+             </form>
+             <br />
+             <p>Or Log In <a href="./login.html">here</a></p>
+           </div>
+         </div>
+       </div>
       </div>
-    </div>
-  </nav>
+      
+     </div>
+  </main>
+  
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
+
+</body>
+
+<!-- <body>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -44,6 +74,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/signup.js"></script>
 
-</body>
+</body> -->
 
 </html>
