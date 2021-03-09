@@ -1,6 +1,6 @@
-<!--div to hold the images for the burger-->
+<!--div to hold the book information such as isbn,book name,author name anf book image-->
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-top: 10px;">
         <div class="col-lg-3">
             <label class="form-label" for="form1">ISBN</label>
             <input type="search" id="isbn" />
@@ -25,79 +25,142 @@
         </div>
         <div class="col-lg-2">
             <button type="button" class="btn btn-primary" data-target="#MySecondmodal" data-toggle="modal">Add
-                book</button>
+                book <i class="fa fa-book"></i></button>
             <div class="modal fade" id="MySecondmodal">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">×</button>
-                            <h4 class="modal-title">Notification</h4>
+                            <h4 class="modal-title">Add Book</h4>
                         </div>
                         <div class="modal-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                      Book Image:<input type="text" placeholder="imageurl"><br>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        
-                                 book:     <input type="text" placeholder="book name"><br>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                         Author:   <input type="text" placeholder="author name"> <br>  
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                 Description:<input type="text" placeholder="description"> <br> 
-                                    </div>
-                                </div>
-                                    <a href="#" class="btn btn-primary">Add Book</a>
-</div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <form id="addBook">                         
+                                   <div id="isbnExist" style="visibility: hidden;color:red">ISBN already exist</div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlLg">ISBN</label>
+                                <input type="text" id="newbookIsbn" class="form-control form-control-lg" required="true"/>
+
+                            </div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlLg">Book</label>
+                                <input type="text" id="newbookName" class="form-control form-control-lg" required="true"/>
+
+                            </div>
+
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlDefault">Author</label>
+                                <input type="text" id="newbookAuthorName" class="form-control" required="true"/>
+
+                            </div>
+
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlSm">Description</label>
+                                <textarea id="newbookDescription" class="form-control form-control-sm" required="true"></textarea>
+                            </div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlDefault">Book Image</label>
+                                <input type="text" id="newbookImage" class="form-control" required="true"/>
+
+                            </div>
+                            <button class="btn btn-primary" style="align: center;" type="submit" id="addBook">ADD</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
+
             </div>
+            <div class="modal fade" id="MyUpdatemodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h4 class="modal-title">Add Book</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="updateBook">                         
+                                   <div id="isbnExist" style="visibility: hidden;color:red">ISBN already exist</div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlLg">ISBN</label>
+                                <input type="text" id="updateBookIsbn" class="form-control form-control-lg" readonly/>
+
+                            </div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlLg">Book</label>
+                                <input type="text" id="updateBookName" class="form-control form-control-lg" required="true"/>
+
+                            </div>
+
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlDefault">Author</label>
+                                <input type="text" id="updateBookAuthorName" class="form-control" required="true"/>
+
+                            </div>
+
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlSm">Description</label>
+                                <textarea id="updatedBookDescription" class="form-control form-control-sm" required="true"></textarea>
+                            </div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlDefault">Book Image</label>
+                                <input type="text" id="updateBookImage" class="form-control" required="true"/>
+
+                            </div>
+                            <button type="submit" id="updateBook" class="btn btn-default">Update</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                            </form>
+
+                        </div>
+                    </div>
+                        </div>
 
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">ISBN</th>
-                        <th scope="col">Book</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">Book Cover</th>
-                    </tr>
-                </thead>
-                <tbody id="getBook">
-                    <ul>
-
-                        {{#each book}}
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-hover">
+                    <thead>
                         <tr>
-                            <td>{{id}}</td>
-                            <td>{{isbn}}</td>
-                            <td>{{book_name}}</td>
-                            <td>{{description}}</td>
-                            <td>{{author_name}}</td>
-                            <td><img src="{{image}}" style='width: 40px;border: 1px solid black;'></img></td>
+                            <th scope="col">#</th>
+                            <th scope="col">ISBN</th>
+                            <th scope="col">Book</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Book Cover</th>
                         </tr>
-                        {{/each}}
-                    </ul>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody id="getBook">
+                        <ul>
+
+                            {{#each book}}
+                            <tr>
+                                <td>{{id}}</td>
+                                <td>{{isbn}}</td>
+                                <td>{{book_name}}</td>
+                                <td>{{description}}</td>
+                                <td>{{author_name}}</td>
+                                <td><img src="{{image}}" style='width: 40px;border: 1px solid black;'></img></td>
+                                <td><button type="button" class="btn btn-primary" data-bookid="{{isbn}}" id="deleteBook">
+                                        <i class="fa fa-trash" id="deleteBook" data-bookid="{{isbn}}" aria-hidden="true"></i>
+
+                                    </button>
+                                </td>
+                                <td>
+                                   <button type="button" class="btn btn-primary" data-target="#MyUpdatemodal" data-toggle="modal" data-update="{{isbn}}" id="updateBook">
+                                       <i class="fa fa-book" data-update="{{isbn}}" id="updateBook"></i></button>
+            
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </ul>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
