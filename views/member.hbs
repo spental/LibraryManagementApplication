@@ -1,0 +1,165 @@
+<!--div to hold the images for the burger-->
+<div class="container">
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-lg-3">
+            <label class="form-label" for="form1">ID</label>
+            <input type="search" id="id" />
+            <button type="button" class="btn btn-primary" id="memberID">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <div class="col-lg-4">
+            <label class="form-label" for="form1">First Name</label>
+            <input type="search" id="fName" />
+            <button type="button" class="btn btn-primary" id="fNameButton">
+                <i class="fa fa-search"></i>
+            </button>
+
+        </div>
+        <div class="col-lg-4">
+            <label class="form-label" for="form1">Last Name</label>
+            <input type="search" id="lName" />
+            <button type="button" class="btn btn-primary" id="lNameButton">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <div class="col-lg-1">
+            <button type="button" class="btn btn-primary" data-target="#MySecondmodal" data-toggle="modal">Add Member <i class="fa fa-user-plus"></i></button>
+            <div class="modal fade" id="MySecondmodal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h4 class="modal-title">Add Member</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="addMember">                         
+                                   <div id="empExist" style="visibility: hidden;color:red">ID already exist</div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlLg">ID</label>
+                                <input type="text" id="newmemID" class="form-control form-control-lg" required="true"/>
+
+                            </div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlLg">First Name</label>
+                                <input type="text" id="newFName" class="form-control form-control-lg" required="true"/>
+
+                            </div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlLg">Last Name</label>
+                                <input type="text" id="newLName" class="form-control form-control-lg" required="true"/>
+
+                            </div>
+
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlDefault">Email</label>
+                                <input type="text" id="newEmail" class="form-control" required="true"/>
+
+                            </div>
+
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlSm">Phone no.</label>
+                                <input type="text" id="newPhoneNo" class="form-control form-control-sm" required="true"/>
+                            </div>
+                            <button type="submit" id="addBook" class="btn btn-default">ADD</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    <div class="modal fade" id="updateMember">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h4 class="modal-title">Update Member</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="addMember">                         
+                                   <div id="empExist" style="visibility: hidden;color:red">ID already exist</div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlLg">ID</label>
+                                <input type="text" id="updatememID" readonly class="form-control form-control-lg" required="true"/>
+
+                            </div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlLg">First Name</label>
+                                <input type="text" id="updateFName" class="form-control form-control-lg" required="true"/>
+
+                            </div>
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlLg">Last Name</label>
+                                <input type="text" id="updateLName" class="form-control form-control-lg" required="true"/>
+
+                            </div>
+
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlDefault">Email</label>
+                                <input type="text" id="updateEmail" class="form-control" required="true"/>
+
+                            </div>
+
+                            <div class="form-outline">
+                                <label class="form-label" for="formControlSm">Phone no.</label>
+                                <input type="text" id="updatePhoneNo" class="form-control form-control-sm" required="true"/>
+                            </div>
+                            <button type="submit" id="updateMember" class="btn btn-default">Update</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>            
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone no.</th>
+                        </tr>
+                    </thead>
+                    <tbody id="getMember">
+                        <ul>
+
+                            {{#each member}}
+                            <tr>
+                                <td>{{id}}</td>
+                                <td>{{memID}}</td>
+                                <td>{{firstName}}</td>
+                                <td>{{lastName}}</td>
+                                <td>{{email}}</td>
+                                <td>{{phoneno}}</td>
+                                <td><button type="button" class="btn btn-primary" data-Memberid="{{memID}}" id="deleteMember">
+                                        <i class="fa fa-trash" id="deleteMember" data-Memberid="{{memID}}" aria-hidden="true"></i>
+
+                                    </button>
+                                </td>
+                                <td>
+                                     <button type="button" class="btn btn-primary" data-updateMemberid="{{memID}}" id="updateMember" data-target="#updateMember" data-toggle="modal">
+                                         <i class="fa fa-user-plus" data-updateMemberid="{{memID}}" id="updateMember"></i></button>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </ul>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

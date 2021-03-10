@@ -115,7 +115,12 @@ $.post("/api/updateBook", {
     });
 
 }); 
-  
+$("#member").on("click",function(){
+  window.location.replace("/api/member");
+ });
+ $("#Book").on("click",function(){
+  window.location.replace("/api/books");
+ }); 
     $('#MybtnModal').click(function(){
 		$('#Mymodal').modal('show')
 	});  
