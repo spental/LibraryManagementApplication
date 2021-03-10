@@ -2,7 +2,7 @@
 form.login {
   margin-top: 50px;
 } */
-.containerMargin {
+.overall{
   margin: 2%;
   border-style: solid;
   border-width: 5px;
@@ -13,20 +13,25 @@ form.login {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  text-align: center;
+  
   /* margin-bottom: 0%; */
   /* background-image: url("/book.jpg"); */
 }
-.container {
+.content {
   text-align: center;
   border-style: solid;
   border-width: 5px;
   border-color: darkgray;
   background-color: black;
   opacity: 75%;
-  margin: 15%;
   align-items: center;
   align-content: center;
   color: white;
+  margin: auto;
+  width: 80%;
+
+  
 }
 
  h1,h2 { 
