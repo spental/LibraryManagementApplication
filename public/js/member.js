@@ -1,6 +1,5 @@
 $(document).ready(() => {
     $("#memberID").on("click",function(){
-        console.log("hello");
     const memID=$("#id").val();
     $.get("/api/memID", {
         memID: memID
@@ -44,6 +43,8 @@ $(document).ready(() => {
   //add new book to the database
   $("#addMember").on("submit",function(event){
     event.preventDefault();
+    const validateMobNum= /^\d*(?:\.\d{1,2})?$/;
+    if (validateMobNum.test($("#newPhoneNo").val() ) && $("#newPhoneNo").val().length == 10) {
     $.post("/api/newMember", {
       memID:$("#newmemID").val(),
       firstName:$("#newFName").val(),
@@ -54,21 +55,28 @@ $(document).ready(() => {
             window.location.replace("/api/member");            
           $("#empExist").css("visibility","hidden");
         })
-        .catch(err => {
-            
+        .catch(err => {            
+          $("#empExist").html('ID already exist');
           $("#empExist").css("visibility","visible");
-          console.log(err);
           $("#newbookIsbn").val(' '),
           $("#newbookName").val(' '),
           $("#newbookAuthorName").val(' '),
           $("#newbookDescription").val(' '),
           $("#newbookImage").val(' ')
         });
-    
+      }
+      else
+      {
+        $("#empExist").html('Phone number is not valid');          
+        $("#empExist").css("visibility","visible");
+      }
     });
   //update member in the database
-  $("#updateMember").on("submit",function(event){
+  $("#updateMemberInfo").on("submit",function(event){
     event.preventDefault();
+    const validateMobNum= /^\d*(?:\.\d{1,2})?$/;
+    if (validateMobNum.test($("#updatePhoneNo").val() ) && $("#updatePhoneNo").val().length == 10)
+     {
     $.post("/api/updateMember", {
       memID:$("#updatememID").val(),
       firstName:$("#updateFName").val(),
@@ -77,26 +85,29 @@ $(document).ready(() => {
       phoneno:$("#updatePhoneNo").val()
       }).then((data) => {
             window.location.replace("/api/member");            
-          $("#empExist").css("visibility","hidden");
+          $("#phoneNumber").css("visibility","hidden");
         })
-        .catch(err => {
-            
-          $("#empExist").css("visibility","visible");
-          console.log(err);
-          $("#newbookIsbn").val(' '),
-          $("#newbookName").val(' '),
-          $("#newbookAuthorName").val(' '),
-          $("#newbookDescription").val(' '),
-          $("#newbookImage").val(' ')
+        .catch(err => {            
+          $("#phoneNumber").css("visibility","visible");
+          $("#updatememID").val(' '),
+          $("#updateFName").val(' '),
+          $("#updateLName").val(' '),
+          $("#updateEmail").val(' '),
+          $("#updatePhoneNo").val(' ')
         });
-    
+      }
+      else
+      {
+        console.log("error");
+        $("#phoneNumber").html('Phone number is not valid');          
+        $("#phoneNumber").css("visibility","visible");
+      }     
     });    
  //update the member in the database
 $("#getMember").on("click",function(event){
   event.preventDefault();
  if(event.target.id=="updateMember") 
  {
-  console.log(($(event.target)).closest("tr"));
   const currentRow=$(event.target).closest("tr"); 
   const memID=currentRow.find("td:eq(1)").text(); // get current row 1st TD value
   $("#updatememID").val(memID);
@@ -115,7 +126,6 @@ const firstName=currentRow.find("td:eq(2)").text(); // get current row 2nd TD
 event.preventDefault();
 if(event.target.id=="deleteMember")
 {
-console.log($(this).attr("data-Memberid"));
 $.post("/api/deleteMember", {
   memID:$(event.target).attr('data-Memberid')
   }).then((data) => {
