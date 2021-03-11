@@ -288,14 +288,14 @@ app.get("/api/lName", (req, res) => {
   let check=[];  
   getAllMemeberInfo.length=0;
   getMemberdata.forEach(element => {
-    check.push(element.lastName);
+    check.push(element.email);
   });
   
   if(_.includes(check,req.query.lName))
   {
    getAllMemeberInfo.length=0;
    getMemberdata.forEach(element => {
-      if(_.includes(element.lastName,req.query.lName))
+      if(_.includes(element.email,req.query.lName))
       { 
        getAllMemeberInfo.push(element);
       }

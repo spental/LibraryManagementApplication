@@ -23,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
       },
       phoneno: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
   
     });

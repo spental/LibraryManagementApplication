@@ -4,9 +4,7 @@ const db = require('../models');
 let createNewMember = (req, res) => {
     db.members.findAll({ where: { memID: req.body.memID } })
         .then(function (data) {
-            console.log("the data is ",data);
             if(!data.length){
-            console.log(req);
             db.members.create({
                 memID: req.body.memID,
                 firstName: req.body.firstName,

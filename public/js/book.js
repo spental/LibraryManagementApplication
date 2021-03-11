@@ -66,7 +66,6 @@ $(document).ready(() => {
   $("#getBook").on("click",function(event){
 event.preventDefault();
 if(event.target.id=="deleteBook")
-console.log($(this).attr("data-Bookid"));
 $.post("/api/deleteBook", {
 isbn:$(event.target).attr('data-Bookid')
 }).then((data) => {
