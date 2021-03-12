@@ -2,7 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 // Requiring passport as we've configured it
-require('dotenv').config();
+//require('dotenv').config();
 const passport = require("./config/passport");
 const exphbs = require("express-handlebars");
 //const config=require("./config/config");
