@@ -11,20 +11,23 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
+      // the author can not be null
       author: {
           type: DataTypes.STRING,
           allowNull: false
         },
+        // the book description can not be null
         description: {
             type: DataTypes.STRING,
             allowNull: false
           },  
+          // the book image can not be null
         imageurl: {
           type: DataTypes.STRING,
           allowNull: false
         },
-  
     });
+    // return the book model
     return Book;
   };
   

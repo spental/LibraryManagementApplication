@@ -43,3 +43,28 @@ form.login {
 {
   background-color:yellowgreen;
 }
+/*member style*/
+.memberstyle
+{
+background-color: white
+}
+/*member row style*/
+.memberrow
+{
+margin-top: 10px
+}
+/*book image border*/
+.bookImage
+{
+width: 40px;border: 1px solid black
+}
+/*body color*/
+.mainBody
+{
+  background-color:tan;
+}
+/*main body conatainer*/
+.mainBodyContainer
+{
+background-color:rgb(12, 37, 83);height:50px
+}

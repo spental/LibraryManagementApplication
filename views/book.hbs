@@ -1,6 +1,7 @@
 <!--div to hold the book information such as isbn,book name,author name anf book image-->
-<div class="container" style="background-color: white;">
-    <div class="row" style="margin-top: 10px;">
+<div class="container memberstyle">
+    <div class="row memberrow">
+        <!--search based on isbn-->
         <div class="col-lg-3">
             <label class="form-label" for="form1">ISBN</label>
             <input type="search" id="isbn" />
@@ -8,6 +9,7 @@
                 <i class="fa fa-search"></i>
             </button>
         </div>
+        <!--search based on book name-->
         <div class="col-lg-3">
             <label class="form-label" for="form1">Book</label>
             <input type="search" id="book" />
@@ -16,6 +18,7 @@
             </button>
 
         </div>
+        <!--search based on author name-->
         <div class="col-lg-4">
             <label class="form-label" for="form1">Author</label>
             <input type="search" id="author" />
@@ -26,6 +29,7 @@
         <div class="col-lg-2">
             <button type="button" class="btn btn-primary" data-target="#MySecondmodal" data-toggle="modal">Add
                 book <i class="fa fa-book"></i></button>
+                <!--modal to add the book information-->
             <div class="modal fade" id="MySecondmodal">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -40,21 +44,16 @@
                                     <label class="form-label" for="formControlLg">ISBN</label>
                                     <input type="text" id="newbookIsbn" class="form-control form-control-lg"
                                         required="true" />
-
                                 </div>
                                 <div class="form-outline">
                                     <label class="form-label" for="formControlLg">Book</label>
                                     <input type="text" id="newbookName" class="form-control form-control-lg"
                                         required="true" />
-
                                 </div>
-
                                 <div class="form-outline">
                                     <label class="form-label" for="formControlDefault">Author</label>
                                     <input type="text" id="newbookAuthorName" class="form-control" required="true" />
-
                                 </div>
-
                                 <div class="form-outline">
                                     <label class="form-label" for="formControlSm">Description</label>
                                     <textarea id="newbookDescription" class="form-control form-control-sm"
@@ -63,26 +62,23 @@
                                 <div class="form-outline">
                                     <label class="form-label" for="formControlDefault">Book Image</label>
                                     <input type="text" id="newbookImage" class="form-control" required="true" />
-
                                 </div>
-                                <button class="btn btn-primary" style="align: center;" type="submit"
-                                    id="addBook">ADD</button>
+                                <button class="btn btn-primary" type="submit" id="addBook">ADD</button>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
-
             </div>
+            <!--modal to update book information-->
             <div class="modal fade" id="MyUpdatemodal">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">×</button>
-                            <h4 class="modal-title">Add Book</h4>
+                            <h4 class="modal-title">Update Book</h4>
                         </div>
                         <div class="modal-body">
                             <form id="updateBook">
@@ -91,21 +87,16 @@
                                     <label class="form-label" for="formControlLg">ISBN</label>
                                     <input type="text" id="updateBookIsbn" class="form-control form-control-lg"
                                         readonly />
-
                                 </div>
                                 <div class="form-outline">
                                     <label class="form-label" for="formControlLg">Book</label>
                                     <input type="text" id="updateBookName" class="form-control form-control-lg"
                                         required="true" />
-
                                 </div>
-
                                 <div class="form-outline">
                                     <label class="form-label" for="formControlDefault">Author</label>
                                     <input type="text" id="updateBookAuthorName" class="form-control" required="true" />
-
                                 </div>
-
                                 <div class="form-outline">
                                     <label class="form-label" for="formControlSm">Description</label>
                                     <textarea id="updatedBookDescription" class="form-control form-control-sm"
@@ -114,24 +105,22 @@
                                 <div class="form-outline">
                                     <label class="form-label" for="formControlDefault">Book Image</label>
                                     <input type="text" id="updateBookImage" class="form-control" required="true" />
-
                                 </div>
-                                <button type="submit" id="updateBook" class="btn btn-default">Update</button>
+                                <button type="submit" id="updateBook" class="btn btn-primary">Update</button>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="table-responsive">
+                    <!--create the table to hold book information-->
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -150,10 +139,10 @@
                             <tr>
                                 <td>{{id}}</td>
                                 <td>{{isbn}}</td>
-                                <td>{{book_name}}</td>
+                                <td>{{bookName}}</td>
                                 <td>{{description}}</td>
-                                <td>{{author_name}}</td>
-                                <td><img src="{{image}}" style='width: 40px;border: 1px solid black;'></img></td>
+                                <td>{{authorName}}</td>
+                                <td><img src="{{image}}" class="bookImage"></img></td>
                                 <td><button type="button" class="btn btn-primary" data-bookid="{{isbn}}"
                                         id="deleteBook">
                                         <i class="fa fa-trash" id="deleteBook" data-bookid="{{isbn}}"
