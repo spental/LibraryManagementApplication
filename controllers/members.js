@@ -28,8 +28,7 @@ let createNewMember = (req, res) => {
             res.status(401).json(err);
         })
 }
-//update the member in the database
-//create the new member
+//update the member in the database using member id
 let updateMember = (req, res) => {
     db.members.findAll({ where: { memID: req.body.memID } })
         .then(function (data) {
@@ -49,7 +48,7 @@ let updateMember = (req, res) => {
             res.status(401).json(err);
         })
 }
-//delete the member from the database
+//delete the member from the database using memberid
 let deleteMember=(req, res) => {
     db.members.destroy({ where: { memID: req.body.memID } })
         .then(function (data) {
@@ -59,6 +58,7 @@ let deleteMember=(req, res) => {
             res.status(401).json(err);
         })
 }
+//export the functions to create delete and update members
 module.exports.createNewMember = createNewMember;  
 module.exports.deleteMember = deleteMember;   
 module.exports.updateMember = updateMember;    
