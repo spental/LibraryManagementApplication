@@ -86,7 +86,7 @@ Clicking "Logout" in the top right of either the Books page or the members page 
 
 ## Screenshot
 
-![image](./pictures/login.png)
+![image](./pictures/Login.png)
 
 ![image](./pictures/SignUp.png)
 
