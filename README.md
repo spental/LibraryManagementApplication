@@ -6,7 +6,7 @@ This application is a tool for librarians to view and manage their database of b
 
 * [Introduction](#Introduction)
 * [Installation](#Installation)
-* [Libraries and Technologies Used](#Libraries and Technologies Used)
+* [Libraries and Technologies Used](#Libraries)
 * [Usage](#Usage)
 * [License](#License)
 * [Screenshot](#Screenshot)
