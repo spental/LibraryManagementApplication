@@ -86,13 +86,13 @@ Clicking "Logout" in the top right of either the Books page or the members page 
 
 ## Screenshot
 
-![image](./public/Assets/pictures/login.png)
+![image](./pictures/login.png)
 
-![image](./public/Assets/pictures/signup.png)
+![image](./pictures/SignUp.png)
 
-![image](./public/Assets/pictures/books.png)
+![image](./pictures/BooksPage1.png)
 
-![image](./public/Assets/pictures/members.png)
+![image](./pictures/MembersPage1.png)
 
 ## Link
 
