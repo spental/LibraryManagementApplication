@@ -62,6 +62,19 @@ Clicking the edit button to the right of any book entry will bring up a similar 
 
 Clicking the delete button to the right of any book entry will immediately delete that book entry from the database.
 
+![Members page](./pictures/MembersPage1.png)
+
+Clicking the "Members" button in the top right will bring the user to the members page. From here, the user can view all the library members. The user can search for users using the search fields near the top.
+
+![Add Member Function](./pictures/AddMember.png)
+
+Clicking on the "Add Member" button will open the Add Member modal which allows the user to enter information about a new member into the various fields. Clicking the "ADD" button on the modal will create a new member entry in the database, populated with the entered information. 
+
+Clicking on the "Update Member" button to the far right of any member entry will bring up a similar modal which will allow the user to edit and update any information for that member. 
+
+Clicking the "Delete" button next to any member entry will immediately delete that member.
+
+Clicking "Logout" in the top right of either the Books page or the members page will immediately log the user out of the application and bring them to the sign in page.
 
 
 ## License
