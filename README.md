@@ -51,7 +51,7 @@ Following the link above will take you to the application's sign up page. You ca
 
 ![Log in page](./pictures/Login.png)
 
-After signing up, click on the **Or log in [here](https://librarymanagement2.herokuapp.com/login.html) ** link to navigate to the login page. Enter your email and password into the provided fields and click "LOGIN" to enter.
+After signing up, click on the **Or log in [here](https://librarymanagement2.herokuapp.com/login.html)** link to navigate to the login page. Enter your email and password into the provided fields and click "LOGIN" to enter.
 
 ![Books page](./pictures/BooksPage1.png)
 
