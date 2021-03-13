@@ -33,7 +33,7 @@ This application is a tool for librarians to view and manage their database of b
 
 In a web browser, navigate to https://librarymanagement2.herokuapp.com/
 
-## Libraries and Technologies Used
+## Libraries
 
 * node js 
 * Visual Studio Code 1.51.1
