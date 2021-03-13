@@ -6,6 +6,7 @@ This application is a tool for librarians to view and manage their database of b
 
 * [Introduction](#Introduction)
 * [Installation](#Installation)
+* [Libraries and Technologies Used](#Libraries and Technologies Used)
 * [Usage](#Usage)
 * [License](#License)
 * [Screenshot](#Screenshot)
@@ -31,6 +32,8 @@ This application is a tool for librarians to view and manage their database of b
 ## Installation
 
 In a web browser, navigate to https://librarymanagement2.herokuapp.com/
+
+## Libraries and Technologies Used
 
 * node js 
 * Visual Studio Code 1.51.1
